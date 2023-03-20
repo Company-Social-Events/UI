@@ -1,0 +1,2 @@
+# react redux sau recoil -> de preferat recoil, vedem daca avem nevoie
+# https://medium.com/geekculture/redux-vs-recoil-16fbdb0b0a52
