@@ -10,13 +10,16 @@ export const DatePickerYears = () => {
     const [date] = context.date;
     const [yearsIndex] = context.yearScrollIndex;
 
-    const yearsSize = 24;
+    const yearsSize = 12;
     const years = useMemo(
         () =>
-            getNearbyYears(
-                new Date(2000 + yearsIndex * yearsSize, 0),
+        {
+            // console.log('CONTEXT', context)
+            return getNearbyYears(
+                new Date((new Date().getFullYear() ) + yearsIndex * yearsSize, 0),
                 yearsSize
-            ),
+            
+            )},
         [yearsIndex]
     );
     const months = useMemo(() => getMonths(date || new Date()), [date]);

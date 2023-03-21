@@ -15,9 +15,9 @@ export const DatePickerDays = () => {
     }, [date]);
 
     return (
-        <HStack>
+        <div className='grid grid-cols-7'>
             {DAY_NAMES.map((title, idx) => {
-                console.log('title', title)
+                // console.log('title', title)
                 return(
                 <DateColumn
                     key={idx}
@@ -25,6 +25,6 @@ export const DatePickerDays = () => {
                     dates={weeks?.[idx] ?? []}
                 />
             )})}
-        </HStack>
+        </div>
     );
 };

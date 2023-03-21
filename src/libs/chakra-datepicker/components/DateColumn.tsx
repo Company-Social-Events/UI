@@ -44,19 +44,17 @@ export const DateColumn: React.FC<ColumnProps> = ({
     };
 
     return (
-        <div
-        className='basis-0 flex flex-col justify-center '
-        >
+        <div className='flex flex-col justify-center ' style={{marginLeft:'0px'}} >
             {Boolean(title) && (
-                <Box my={2} textAlign="center" fontWeight="semibold">
+                <div className='my-2 text-center font-semibold'>
                     {title}
-                </Box>
+                </div>
             )}
             {dates.map((n, i) => (
                 <Button
                     key={i}
                     mt={i > 0 ? '0' : undefined}
-                    size="sm"
+                    size="xs"
                     onClick={handleSelect(n)}
                     variant={helpers.selected(n) ? 'solid' : 'ghost'}
                     colorScheme={helpers.selected(n) ? 'teal' : undefined}

@@ -32,23 +32,10 @@ export const DatePickerContainer: React.FC<DatePickerProps> = (props) => {
 
     return (
         <>
-            <PopoverTrigger>
-                <Input
-                    size="lg"
-                    value={value}
-                    onFocus={onFocus}
-                    onChange={onChange}
-                />
-            </PopoverTrigger>
-            <PopoverContent width="auto">
-                <PopoverArrow />
-                <PopoverBody>
-                    <Flex direction="column">
-                        <DatePickerHeader />
-                        <DatePickerContent />
-                    </Flex>
-                </PopoverBody>
-            </PopoverContent>
+            <div className='flex flex-col'>
+                <DatePickerHeader />
+                <DatePickerContent />
+            </div>
         </>
     );
 };
