@@ -19,7 +19,6 @@ export default function CheckboxList({ listItems }: CheckboxListProps) {
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
     setChecked(newChecked);
   };
   return (
@@ -31,9 +30,9 @@ export default function CheckboxList({ listItems }: CheckboxListProps) {
             className="flex gap-2 items-center"
           >
             <Checkbox size='sm' colorScheme={colorSchemes[index*4 % colorSchemes.length]}
-              checked={checked.indexOf(item) !== -1}
+              defaultChecked
               tabIndex={-1}
-              onClick={handleToggle(item)}>
+              >
               {item}
             </Checkbox>
           </ListItem>
