@@ -14,18 +14,12 @@ import { useDatePicker } from './DatePickerContext';
 import { DatePickerProps } from './props';
 
 export const DatePickerContainer: React.FC<DatePickerProps> = (props) => {
-    const popover = usePopover();
     const {
         selectedDate: [date],
     } = useDatePicker();
-
-    const value = date?.getTime() === 0 ? '' : date?.toLocaleDateString();
-    const onFocus = () => popover?.getTriggerProps?.()?.onClick?.(null as any);
-
     const onChange = () => {
         props.onDateChange?.(date);
     };
-
     useEffect(() => {
         onChange()
     }, [date]);
@@ -33,7 +27,7 @@ export const DatePickerContainer: React.FC<DatePickerProps> = (props) => {
     return (
         <>
             <div className='flex flex-col'>
-                <DatePickerHeader />
+                {!props.hideHeader &&  <DatePickerHeader /> }
                 <DatePickerContent />
             </div>
         </>

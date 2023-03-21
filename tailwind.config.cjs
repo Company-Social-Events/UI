@@ -9,6 +9,9 @@ module.exports = {
       gridTemplateColumns: {
         // Complex site-specific column configuration
         'sidebar-calendar': '256px 1fr',
+      },
+      gridTemplateRows:{
+        'calendar': '84px 1fr',
       }
     },
   },

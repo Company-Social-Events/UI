@@ -1,11 +1,15 @@
-import Sidebar from "../components/Sidebar";
-import Calendar from "../components/Calendar";
+import Sidebar from "../components/sidebar/Sidebar";
+import Calendar from "../components/calendar/Calendar";
 const Home = () => {
+  
+    
     return (
+        <>
             <div className="h-screen grid grid-cols-sidebar-calendar">
                 <Sidebar />
-                <Calendar />
+                <Calendar/>
             </div>
+        </>
 
 
     );

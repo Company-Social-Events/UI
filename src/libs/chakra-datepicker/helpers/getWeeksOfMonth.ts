@@ -49,7 +49,9 @@ export function getWeeksOfMonth(input: Date): Date[][] {
         .reduce((a, v) => a.concat(v), [])
         .reduce(
             (a, v, idx) => {
-                a[idx % 7].push(v);
+                console.log(idx, v);
+                // a[idx % 7].push(v);
+                a[Math.floor(idx/6)].push(v);
                 return a;
             },
             [[], [], [], [], [], [], []] as Date[][]

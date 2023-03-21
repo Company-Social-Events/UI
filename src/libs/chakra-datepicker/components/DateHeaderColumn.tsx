@@ -10,7 +10,7 @@ interface ColumnProps {
     years?: boolean;
 }
 
-export const DateColumn: React.FC<ColumnProps> = ({
+export const DateHeaderColumn: React.FC<ColumnProps> = ({
     dates,
     title,
     months = false,
@@ -44,7 +44,7 @@ export const DateColumn: React.FC<ColumnProps> = ({
     };
 
     return (
-        <>
+        <div className='flex flex-col justify-center ' style={{marginLeft:'0px'}} >
             {Boolean(title) && (
                 <div className='my-2 text-center font-semibold'>
                     {title}
@@ -63,6 +63,6 @@ export const DateColumn: React.FC<ColumnProps> = ({
                     {helpers.getButtonText(n)}
                 </Button>
             ))}
-        </>
+        </div>
     );
 };

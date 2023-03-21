@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DatePicker } from "../libs/chakra-datepicker";
+import { DatePicker } from "../../libs/chakra-datepicker";
 
 
 const MyDatePicker = () => {

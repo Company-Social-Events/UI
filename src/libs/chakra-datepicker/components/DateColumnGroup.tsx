@@ -1,7 +1,7 @@
 import { Box, Flex, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { chunkArray } from '../helpers/chunkArray';
-import { DateColumn } from './DateColumn';
+import { DateHeaderColumn } from './DateHeaderColumn';
 
 interface ColumnGroupProps {
     dates: Date[];
@@ -34,7 +34,7 @@ export const DateColumnGroup: React.FC<ColumnGroupProps> = ({
             <div>
                 {chunkArray(dates, columnSize).map((list, i) =>{
                     return (
-                        <DateColumn dates={list} {...rest} key={i} />
+                        <DateHeaderColumn dates={list} {...rest} key={i} />
                     )
                 } )}
             </div>

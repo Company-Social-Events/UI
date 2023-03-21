@@ -1,7 +1,7 @@
 
 import AccountMenu from "./AccountMenu";
 import EventCategories from "./EventCategories";
-import MyDatePicker from "./MyDatePicker";
+import MyDatePicker from "../calendar/MyDatePicker";
 import { Divider } from '@chakra-ui/react'
 const Sidebar = () => {
     return (<div className="bg-gray-200 p-2 flex flex-col justify-between">

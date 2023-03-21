@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Menu, MenuButton, MenuList, MenuItem , Button, Avatar} from '@chakra-ui/react';
 import { Text, Box} from '@chakra-ui/react'
-import AvatarIcon from '../assets/fox.png'
+import AvatarIcon from '../../assets/fox.png'
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);

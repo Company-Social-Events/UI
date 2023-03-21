@@ -4,4 +4,5 @@ export interface DatePickerProps {
     time?: boolean;
     initialValue?: Date;
     onDateChange?: (date: Date | null) => void;
+    hideHeader? : boolean;
 }
