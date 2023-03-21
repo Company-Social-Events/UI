@@ -17,6 +17,7 @@ export const useDatePicker = () => useContext(DatePickerContext);
 interface Props {
     time?: boolean;
     initialValue?: Date;
+    children?: React.ReactNode;
 }
 
 export const DatePickerProvider: React.FC<Props> = ({

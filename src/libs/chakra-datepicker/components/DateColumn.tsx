@@ -44,11 +44,8 @@ export const DateColumn: React.FC<ColumnProps> = ({
     };
 
     return (
-        <Flex
-            direction="column"
-            flex-basis="0"
-            justifyContent="center"
-            spacing="2"
+        <div
+        className='basis-0 flex flex-col justify-center '
         >
             {Boolean(title) && (
                 <Box my={2} textAlign="center" fontWeight="semibold">
@@ -58,7 +55,7 @@ export const DateColumn: React.FC<ColumnProps> = ({
             {dates.map((n, i) => (
                 <Button
                     key={i}
-                    mt={i > 0 ? '2' : undefined}
+                    mt={i > 0 ? '0' : undefined}
                     size="sm"
                     onClick={handleSelect(n)}
                     variant={helpers.selected(n) ? 'solid' : 'ghost'}
@@ -68,6 +65,6 @@ export const DateColumn: React.FC<ColumnProps> = ({
                     {helpers.getButtonText(n)}
                 </Button>
             ))}
-        </Flex>
+        </div>
     );
 };

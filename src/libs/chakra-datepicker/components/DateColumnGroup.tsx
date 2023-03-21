@@ -20,32 +20,24 @@ export const DateColumnGroup: React.FC<ColumnGroupProps> = ({
     ...rest
 }) => {
     return (
-        <Stack>
-            <Flex
-                flexDirection="row"
-                justifyContent="center"
-                alignItems="center"
-            >
-                <Box mt={2} textAlign="center" fontWeight="semibold">
+        <div>
+            <div className='flex flex-row justify-center items-center'>
+                <div className="mt-2 text-center font-semibold" >
                     {title}
-                </Box>
+                </div>
                 {Boolean(subtitle) && (
-                    <Box
-                        mt={2}
-                        ml={2}
-                        textAlign="center"
-                        fontWeight="medium"
-                        fontSize="sm"
-                    >
+                    <div className='mt-2 ml-2 text-center font-medium text-sm'>
                         {subtitle}
-                    </Box>
+                    </div>
                 )}
-            </Flex>
-            <Flex>
-                {chunkArray(dates, columnSize).map((list, i) => (
-                    <DateColumn dates={list} {...rest} key={i} />
-                ))}
-            </Flex>
-        </Stack>
+            </div>
+            <div>
+                {chunkArray(dates, columnSize).map((list, i) =>{
+                    return (
+                        <DateColumn dates={list} {...rest} key={i} />
+                    )
+                } )}
+            </div>
+        </div>
     );
 };

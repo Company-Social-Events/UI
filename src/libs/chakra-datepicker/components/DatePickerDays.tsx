@@ -16,13 +16,15 @@ export const DatePickerDays = () => {
 
     return (
         <HStack>
-            {DAY_NAMES.map((title, idx) => (
+            {DAY_NAMES.map((title, idx) => {
+                console.log('title', title)
+                return(
                 <DateColumn
                     key={idx}
                     {...{ title }}
                     dates={weeks?.[idx] ?? []}
                 />
-            ))}
+            )})}
         </HStack>
     );
 };
