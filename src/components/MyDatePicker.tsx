@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { DatePicker as ChakraDatePicker } from "./chakra-datepicker";
+import { DatePicker } from "../libs/chakra-datepicker";
 
 const MyDatePicker = () => {
     const [date, setDate] = useState(new Date());
  
 return (          
-<ChakraDatePicker
+<DatePicker
         initialValue={date}
         onDateChange={(d) => window.console.log("ChakraDatePicker::d", d)}
       />);
