@@ -5,7 +5,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend:{
+      gridTemplateColumns: {
+        // Complex site-specific column configuration
+        'sidebar-calendar': '256px 1fr',
+      }
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
