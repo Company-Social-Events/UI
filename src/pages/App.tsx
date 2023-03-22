@@ -11,8 +11,8 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<div>page not found</div>} />
+          <Route path="/UI" element={<Home />} />
+          <Route path="/UI/*" element={<div>page not found</div>} />
         </Routes>
     </BrowserRouter>
   );
