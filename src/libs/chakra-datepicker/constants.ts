@@ -1,4 +1,4 @@
-export const DAY_NAMES = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+export const DAY_NAMES = [ 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 export const SHORT_MONTH_NAMES = [
     'Jan',
     'Feb',

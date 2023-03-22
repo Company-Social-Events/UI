@@ -5,9 +5,11 @@ import {
   Route,
   BrowserRouter 
 } from "react-router-dom";
+import 'dayjs/locale/ro';
+import dayjs from 'dayjs';
 
 function App() {
-
+  dayjs.locale('ro');
   return (
     <BrowserRouter>
         <Routes>

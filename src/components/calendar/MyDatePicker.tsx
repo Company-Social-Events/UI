@@ -1,15 +1,14 @@
-import { useState } from "react";
 import { DatePicker } from "../../libs/chakra-datepicker";
+import { DatePickerProps } from "../../libs/chakra-datepicker/props";
+type MyDatePickerProps = {
+  datePickerProps: DatePickerProps;
+}
 
-
-const MyDatePicker = () => {
-  const [date, setDate] = useState(new Date());
+const MyDatePicker = ({datePickerProps } : MyDatePickerProps) => {
 
   return (
     <>
-      <DatePicker
-        initialValue={date}
-        onDateChange={(d) => window.console.log("ChakraDatePicker::d", d)}
+      <DatePicker {...datePickerProps}
       />
     </>
   );

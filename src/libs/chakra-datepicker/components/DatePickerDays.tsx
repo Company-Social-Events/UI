@@ -2,7 +2,7 @@ import { HStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { DAY_NAMES } from '../constants';
 import { useDatePicker } from '../DatePickerContext';
-import { getWeeksOfMonth } from '../helpers/getWeeksOfMonth';
+import { getDaysOfMonth } from '../helpers/getDaysOfMonth';
 import { Days } from './Days';
 
 export const DatePickerDays = () => {
@@ -11,8 +11,8 @@ export const DatePickerDays = () => {
     const [weeks, setWeeks] = useState<Date[]>();
 
     useEffect(() => {
-        // console.log(getWeeksOfMonth(date || new Date()))
-        setWeeks(getWeeksOfMonth(date || new Date()));
+        // console.log(getDaysOfMonth(date || new Date()))
+        setWeeks(getDaysOfMonth(date || new Date()));
     }, [date]);
 
     return (

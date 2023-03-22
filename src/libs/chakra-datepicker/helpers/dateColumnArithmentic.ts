@@ -1,5 +1,5 @@
 import { SHORT_MONTH_NAMES } from '../constants';
-
+import dayjs from 'dayjs';
 export class DateColumnArithemetic {
     constructor(
         private dates: Date[],
@@ -20,11 +20,11 @@ export class DateColumnArithemetic {
         return n.getTime() === this.selectedDate?.getTime();
     }
 
-    outOfMonth(i: number, n: Date) {
+    outOfMonth(date : Date | null) {
+        // console.log(date)
+        console.log(dayjs(this.viewingDate).month(),dayjs(date).month())
         return (
-            ((i === 0 && n.getDate() > 7) ||
-                (i === this.dates.length - 1 && n.getDate() <= 7)) &&
-            !(this.months || this.years)
+            dayjs(this.viewingDate).month() !=  dayjs(date).month()
         );
     }
 
