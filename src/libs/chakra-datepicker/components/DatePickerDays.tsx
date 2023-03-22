@@ -19,7 +19,7 @@ export const DatePickerDays = () => {
         <div className='grid grid-cols-7 grid-rows-6'>
             {DAY_NAMES.map((title, idx) => {
                 return  Boolean(title) && (
-                    <div className='my-2 text-center font-semibold'>
+                    <div key={title + idx} className='my-2 text-center font-semibold'>
                         {title}
                     </div>
                 )

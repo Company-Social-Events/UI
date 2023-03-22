@@ -1,59 +1,19 @@
+
+//return array of date objects for each week in the month of the input date
+import dayjs from 'dayjs';
 export function getWeeksOfMonth(input: Date): Date[] {
     const date = new Date(input);
-    const year = date.getFullYear();
-    const month = date.getMonth();
+    const numberOfWeeks = 6;
+    const startOfMonth = dayjs(date).startOf("month").day();
+    
+    let start = -startOfMonth;
+    const days: Date[] =new Array(numberOfWeeks * 7);
+    for(let i=0;i <numberOfWeeks * 7;i++){
+        const date = dayjs(startOfMonth).add(start + i,'day').toDate();
+        days[i] = date;
+    }
+    console.log(days)
+    console.log(dayjs(startOfMonth).add(0, 'day').toDate())
+    return days;
 
-    const firstDayOfMonth = new Date(year, month, 1).getDay();
-    const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
-    const lastDayOfMonth = new Date(year, month + 1, 0).getDay();
-    const lastDayOfLastMonth = new Date(year, month, 0).getDate();
-
-    const weeks: Date[][] = [];
-    const firstWeekDiff = lastDayOfLastMonth - firstDayOfMonth;
-    const daysInMonth =
-        lastDateOfMonth + firstDayOfMonth + (7 - lastDayOfMonth);
-    const numberOfWeeks = Math.round(daysInMonth / 7);
-
-    [...new Array(numberOfWeeks)].forEach((_, idx) => {
-        const start = weeks?.[idx - 1]?.[6]?.getDate?.() ?? firstWeekDiff;
-        const week = [...new Array(7)].map((__, jdx) => {
-            // First week of month
-            if (idx === 0) {
-                if (jdx >= firstDayOfMonth) {
-                    return new Date(year, month, jdx - firstDayOfMonth + 1);
-                } else {
-                    return new Date(
-                        year,
-                        month - 1,
-                        lastDayOfLastMonth - (firstDayOfMonth - jdx - 1)
-                    );
-                }
-            }
-            // Last week of month
-            if (start + 1 + jdx > lastDateOfMonth) {
-                return new Date(
-                    year,
-                    month + 1,
-                    start + 1 + jdx - lastDateOfMonth
-                );
-            }
-
-            // Any other day
-            return new Date(year, month, start + 1 + jdx);
-        });
-
-        weeks.push(week);
-    });
-
-    return weeks
-        .reduce((a, v) => a.concat(v), [])
-        .reduce(
-            (a, v, idx) => {
-                // console.log(idx, v);
-                // a[idx % 7].push(v);
-                a.push(v);
-                return a;
-            },
-            [] as Date[]
-        );
 }
