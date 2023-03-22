@@ -5,14 +5,12 @@ import { DateColumnArithemetic } from '../helpers/dateColumnArithmentic';
 
 interface ColumnProps {
     dates: Date[];
-    title?: string;
     months?: boolean;
     years?: boolean;
 }
 
-export const DateColumn: React.FC<ColumnProps> = ({
+export const Days: React.FC<ColumnProps> = ({
     dates,
-    title,
     months = false,
     years = false,
 }) => {
@@ -45,11 +43,6 @@ export const DateColumn: React.FC<ColumnProps> = ({
 
     return (
         <>
-            {Boolean(title) && (
-                <div className='my-2 text-center font-semibold'>
-                    {title}
-                </div>
-            )}
             {dates.map((n, i) => (
                 <Button
                     key={i}

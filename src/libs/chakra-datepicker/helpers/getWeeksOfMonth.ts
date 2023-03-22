@@ -1,4 +1,4 @@
-export function getWeeksOfMonth(input: Date): Date[][] {
+export function getWeeksOfMonth(input: Date): Date[] {
     const date = new Date(input);
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -49,11 +49,11 @@ export function getWeeksOfMonth(input: Date): Date[][] {
         .reduce((a, v) => a.concat(v), [])
         .reduce(
             (a, v, idx) => {
-                console.log(idx, v);
+                // console.log(idx, v);
                 // a[idx % 7].push(v);
-                a[Math.floor(idx/6)].push(v);
+                a.push(v);
                 return a;
             },
-            [[], [], [], [], [], [], []] as Date[][]
+            [] as Date[]
         );
 }
