@@ -1,12 +1,12 @@
 import { HStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { DAY_NAMES } from '../constants';
-import { useDatePicker } from '../DatePickerContext';
+import { useCalendar } from '../CalendarContext';
 import { getDaysOfMonth } from '../helpers/getDaysOfMonth';
 import { Days } from './Days';
 
-export const DatePickerDays = () => {
-    const context = useDatePicker();
+export const CalendarDays = () => {
+    const context = useCalendar();
     const [date] = context.date;
     const [weeks, setWeeks] = useState<Date[]>();
 

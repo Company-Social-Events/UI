@@ -22,7 +22,7 @@ export class DateColumnArithemetic {
 
     outOfMonth(date : Date | null) {
         // console.log(date)
-        console.log(dayjs(this.viewingDate).month(),dayjs(date).month())
+        // console.log(dayjs(this.viewingDate).month(),dayjs(date).month())
         return (
             dayjs(this.viewingDate).month() !=  dayjs(date).month()
         );

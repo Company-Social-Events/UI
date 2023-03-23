@@ -2,10 +2,10 @@ import { Box, Divider, Flex, IconButton } from '@chakra-ui/react';
 import React from 'react';
 import { IoCaretBack, IoCaretForward } from 'react-icons/io5';
 import { FULL_MONTH_NAMES } from '../constants';
-import { useDatePicker } from '../DatePickerContext';
+import { useCalendar } from '../CalendarContext';
 
-export const DatePickerHeader = () => {
-    const context = useDatePicker();
+export const CalendarHeader = () => {
+    const context = useCalendar();
     const [_date, setDate] = context.date;
     const [selectedDate, setSelectedDate] = context.selectedDate;
     const [selectingYear, setSelectingYear] = context.selectingYear;
@@ -43,35 +43,30 @@ export const DatePickerHeader = () => {
 
     return (
         <>
-            <Flex alignItems="center" my={2}>
-                <Box>
+            <div className='flex my-2 items-center'>
+                <div>
                     <IconButton
                         icon={<IoCaretBack />}
                         size="sm"
                         aria-label="previous"
                         onClick={onChange('backward')}
                     />
-                </Box>
-                <Flex
-                    flex="1"
-                    justifyContent="center"
-                    fontWeight="bold"
-                    fontSize="large"
-                    userSelect="none"
-                    _hover={{ cursor: 'pointer' }}
+                </div>
+                <div 
+                    className='flex flex-1 justify-center font-bold text-lg select-none cursor-pointer'
                     onClick={onYearChange}
                 >
                     {!selectingYear ? `${monthName} ${year}` : 'Back'}
-                </Flex>
-                <Box>
+                </div>
+                <div>
                     <IconButton
                         icon={<IoCaretForward />}
                         size="sm"
                         aria-label="next"
                         onClick={onChange('forward')}
                     />
-                </Box>
-            </Flex>
+                </div>
+            </div>
             <Divider />
         </>
     );

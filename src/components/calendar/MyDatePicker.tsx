@@ -1,17 +1,17 @@
-import { DatePicker } from "../../libs/chakra-datepicker";
-import { DatePickerProps } from "../../libs/chakra-datepicker/props";
-type MyDatePickerProps = {
-  datePickerProps: DatePickerProps;
+import { Calendar } from "../../libs/chakra-datepicker";
+import { CalendarProps } from "../../libs/chakra-datepicker/props";
+type MyCalendarProps = {
+  datePickerProps: CalendarProps;
 }
 
-const MyDatePicker = ({datePickerProps } : MyDatePickerProps) => {
+const MyCalendar = ({datePickerProps } : MyCalendarProps) => {
 
   return (
     <>
-      <DatePicker {...datePickerProps}
+      <Calendar {...datePickerProps}
       />
     </>
   );
 }
 
-export default MyDatePicker;
+export default MyCalendar;

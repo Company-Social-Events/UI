@@ -1,12 +1,12 @@
 import { Divider, HStack } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
-import { useDatePicker } from '../DatePickerContext';
+import { useCalendar } from '../CalendarContext';
 import { getMonths } from '../helpers/getMonths';
 import { getNearbyYears } from '../helpers/getNearbyYears';
 import { DateColumnGroup } from './DateColumnGroup';
 
-export const DatePickerYears = () => {
-    const context = useDatePicker();
+export const CalendarYears = () => {
+    const context = useCalendar();
     const [date] = context.date;
     const [yearsIndex] = context.yearScrollIndex;
 

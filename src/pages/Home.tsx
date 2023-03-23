@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import Calendar from "../components/calendar/Calendar";
-import { DatePickerProvider } from '../libs/chakra-datepicker/DatePickerContext';
+import { CalendarProvider } from '../libs/chakra-datepicker/CalendarContext';
 const Home = () => {
     const [date, setDate] = useState(new Date());
 
@@ -9,14 +9,14 @@ const Home = () => {
     return (
         <>
             <div className="h-screen grid grid-cols-sidebar-calendar">
-                <DatePickerProvider initialValue={date} >
+                <CalendarProvider initialValue={date} >
                     <Sidebar datePickerProps={{
-                        onDateChange: (d) => window.console.log("ChakraDatePicker::d", d)
+                        onDateChange: (d) => window.console.log("ChakraCalendar::d", d)
                     }} />
                     <Calendar datePickerProps={{
-                        onDateChange: (d) => window.console.log("ChakraDatePicker::d", d)
+                        onDateChange: (d) => window.console.log("ChakraCalendar::d", d)
                     }}/>
-                </DatePickerProvider>
+                </CalendarProvider>
             </div>
         </>
 

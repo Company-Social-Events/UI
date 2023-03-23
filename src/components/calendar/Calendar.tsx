@@ -1,16 +1,13 @@
-import { DatePicker } from "../../libs/chakra-datepicker";
-import { DatePickerProps } from "../../libs/chakra-datepicker/props";
-
+import { CalendarProps } from "../../libs/chakra-datepicker/props";
+import { CalendarContainer } from "../../libs/chakra-datepicker/CalendarContainer"; 
 type CalendarProps = {
-    datePickerProps: DatePickerProps;
+    datePickerProps: CalendarProps;
 }
 const Calendar = ({datePickerProps} : CalendarProps) => {
     return ( <div className="bg-gray-100 grid grid-rows-calendar">
         <div></div>
         <div>
-            <DatePicker hideHeader={true}/>
-
-
+            <CalendarContainer hideHeader={true} {...datePickerProps} />
         </div>
     </div> );
 }

@@ -1,4 +1,4 @@
-export interface DatePickerProps {
+export interface CalendarProps {
     triggerButton?: React.ReactNode;
     triggerButtonText?: string;
     time?: boolean;

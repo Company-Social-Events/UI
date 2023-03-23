@@ -1,11 +1,12 @@
 
 import AccountMenu from "./AccountMenu";
 import EventCategories from "./EventCategories";
-import MyDatePicker from "../calendar/MyDatePicker";
+import MyCalendar from "../calendar/MyCalendar";
 import { Divider } from '@chakra-ui/react'
-import { DatePickerProps } from "../../libs/chakra-datepicker/props";
+import { CalendarProps } from "../../libs/chakra-datepicker/props";
+import MiniCalendar from "../calendar/MiniCalendar";
 type SidebarProps = {
-    datePickerProps: DatePickerProps;
+    datePickerProps: CalendarProps;
 }
 const Sidebar = ({datePickerProps} : SidebarProps) => {
     return (<div className="bg-gray-200 p-2 flex flex-col justify-between">
@@ -16,7 +17,7 @@ const Sidebar = ({datePickerProps} : SidebarProps) => {
         </div>
         <div>
             <Divider />
-            <MyDatePicker datePickerProps={{...datePickerProps}} />
+            <MiniCalendar datePickerProps={{...datePickerProps}} />
         </div>
     </div>);
 }

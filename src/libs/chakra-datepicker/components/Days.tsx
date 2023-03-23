@@ -1,6 +1,6 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
-import { useDatePicker } from '../DatePickerContext';
+import { useCalendar } from '../CalendarContext';
 import { DateColumnArithemetic } from '../helpers/dateColumnArithmentic';
 
 interface ColumnProps {
@@ -14,7 +14,7 @@ export const Days: React.FC<ColumnProps> = ({
     months = false,
     years = false,
 }) => {
-    const context = useDatePicker();
+    const context = useCalendar();
     const [date, setDate] = context.date;
     const [selectedDate, setSelectedDate] = context.selectedDate;
 

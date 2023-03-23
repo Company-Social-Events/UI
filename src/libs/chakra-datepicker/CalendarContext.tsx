@@ -10,9 +10,9 @@ type ContextType = {
     yearScrollIndex: StateType<number>;
 };
 
-export const DatePickerContext = createContext<ContextType>({} as any);
+export const CalendarPickerContext = createContext<ContextType>({} as any);
 
-export const useDatePicker = () => useContext(DatePickerContext);
+export const useCalendar = () => useContext(CalendarPickerContext);
 
 interface Props {
     time?: boolean;
@@ -20,7 +20,7 @@ interface Props {
     children?: React.ReactNode;
 }
 
-export const DatePickerProvider: React.FC<Props> = ({
+export const CalendarProvider: React.FC<Props> = ({
     time: isTime,
     initialValue = null,
     children,
@@ -41,7 +41,7 @@ export const DatePickerProvider: React.FC<Props> = ({
     const time = useState<number>(0);
 
     return (
-        <DatePickerContext.Provider
+        <CalendarPickerContext.Provider
             value={{
                 date,
                 selectedDate,
@@ -52,6 +52,6 @@ export const DatePickerProvider: React.FC<Props> = ({
             }}
         >
             {children}
-        </DatePickerContext.Provider>
+        </CalendarPickerContext.Provider>
     );
 };
