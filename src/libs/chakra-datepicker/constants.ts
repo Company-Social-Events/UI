@@ -1,6 +1,6 @@
 export const DAY_NAMES = [ 'Lu', 'Ma', 'Mi', 'Jo', 'Vi', 'Sa', 'Du'];
 export const SHORT_MONTH_NAMES = [
-    'Jan',
+    'Ian',
     'Feb',
     'Mar',
     'Apr',

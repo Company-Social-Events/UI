@@ -18,8 +18,8 @@ export const CalendarContainer: React.FC<CalendarProps> = (props) => {
     return (
         <>
             <div className='flex flex-col'>
-                {!props.hideHeader &&  <CalendarHeader /> }
-                <CalendarContent />
+                {!!props.canPickYear &&  <CalendarHeader /> }
+                <CalendarContent canPickYear={props.canPickYear}/>
             </div>
         </>
     );

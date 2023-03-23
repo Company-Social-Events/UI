@@ -4,5 +4,5 @@ export interface CalendarProps {
     time?: boolean;
     initialValue?: Date;
     onDateChange?: (date: Date | null) => void;
-    hideHeader? : boolean;
+    canPickYear? : boolean;
 }

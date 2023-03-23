@@ -2,14 +2,15 @@ import React from 'react';
 import { useCalendar } from '../CalendarContext';
 import { CalendarDays } from './CalendarDays';
 import { CalendarYears } from './CalendarYears';
-
-export const CalendarContent = () => {
+type CalendarContentProps = {
+    canPickYear? : boolean;
+};
+export const CalendarContent = ({ canPickYear  }: CalendarContentProps)  => {
     const context = useCalendar();
 
-    if (!context.selectingYear[0]) {
-        
-        return <CalendarDays />;
-    } else {
+    if (canPickYear && context.selectingYear[0]) {
         return <CalendarYears />;
+    } else {
+        return <CalendarDays />;
     }
 };

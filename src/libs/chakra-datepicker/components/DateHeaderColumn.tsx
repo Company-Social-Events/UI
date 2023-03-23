@@ -57,7 +57,7 @@ export const DateHeaderColumn: React.FC<ColumnProps> = ({
                     onClick={handleSelect(n)}
                     variant={helpers.selected(n) ? 'solid' : 'ghost'}
                     colorScheme={helpers.selected(n) ? 'teal' : undefined}
-                    color={helpers.outOfMonth( n) ? 'gray.400' : undefined}
+                    color={helpers.outOfMonth(n) ? 'gray.400' : undefined}
                 >
                     {helpers.getButtonText(n)}
                 </Button>

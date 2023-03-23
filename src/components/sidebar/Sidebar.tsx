@@ -1,7 +1,6 @@
 
 import AccountMenu from "./AccountMenu";
 import EventCategories from "./EventCategories";
-import MyCalendar from "../calendar/MyCalendar";
 import { Divider } from '@chakra-ui/react'
 import { CalendarProps } from "../../libs/chakra-datepicker/props";
 import MiniCalendar from "../calendar/MiniCalendar";
@@ -17,7 +16,7 @@ const Sidebar = ({datePickerProps} : SidebarProps) => {
         </div>
         <div>
             <Divider />
-            <MiniCalendar datePickerProps={{...datePickerProps}} />
+            <MiniCalendar datePickerProps={{...datePickerProps , canPickYear: true}} />
         </div>
     </div>);
 }
