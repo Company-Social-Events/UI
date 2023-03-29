@@ -1,7 +1,7 @@
 import { HStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { DAY_NAMES } from '../constants';
-import { useCalendar } from '../CalendarContext';
+import { useCalendar } from '../../../components/context/CalendarContext';
 import { getDaysOfMonth } from '../helpers/getDaysOfMonth';
 import { Days } from './Days';
 

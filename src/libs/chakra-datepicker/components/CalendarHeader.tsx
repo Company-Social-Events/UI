@@ -2,7 +2,7 @@ import { Box, Divider, Flex, IconButton } from '@chakra-ui/react';
 import React from 'react';
 import { IoCaretBack, IoCaretForward } from 'react-icons/io5';
 import { FULL_MONTH_NAMES } from '../constants';
-import { useCalendar } from '../CalendarContext';
+import { useCalendar } from '../../../components/context/CalendarContext';
 
 export const CalendarHeader = () => {
     const context = useCalendar();

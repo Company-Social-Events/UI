@@ -1,6 +1,6 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
-import { useCalendar } from '../CalendarContext';
+import { useCalendar } from '../../../components/context/CalendarContext';
 import { DateColumnArithemetic } from '../helpers/dateColumnArithmentic';
 
 interface ColumnProps {

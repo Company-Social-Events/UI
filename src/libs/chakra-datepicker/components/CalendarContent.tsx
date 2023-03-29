@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCalendar } from '../CalendarContext';
+import { useCalendar } from '../../../components/context/CalendarContext';
 import { CalendarDays } from './CalendarDays';
 import { CalendarYears } from './CalendarYears';
 type CalendarContentProps = {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { CalendarContent } from './components/CalendarContent';
 import { CalendarHeader } from './components/CalendarHeader';
-import { useCalendar } from './CalendarContext';
+import { useCalendar } from '../../components/context/CalendarContext';
 import { CalendarProps } from './props';
 
 export const CalendarContainer: React.FC<CalendarProps> = (props) => {
