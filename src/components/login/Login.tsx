@@ -3,7 +3,6 @@ import {
     Button,
     Checkbox,
     Container,
-    Divider,
     FormControl,
     FormLabel,
     Heading,
@@ -19,19 +18,40 @@ import { useMyAccount } from "../context/MyAccountContext";
 import { useNavigate } from "react-router-dom";
 import AvatarIcon from "../../assets/fox.png"
 import { useState } from 'react';
+import { useToast } from '@chakra-ui/react'
 const Login = () => {
     const context = useMyAccount();
     const navigate = useNavigate();
-    const [isAuthenticated, setIsAuthenticated] = context.isAuthenticated;
-    const [username, setUsername] = context.username;
+    // const [user,setUser] = context.user;
+    console.log(context.user);
+    const toast = useToast();
     const [inputEmail, setInputEmail] = useState('');
     const [inputPassword, setInputPassword] = useState('');
+    
     const handleLogin = () => {
-        setUsername("alex");
-        setIsAuthenticated(true);
-        console.log(1)
-        navigate('/UI');
+        if (!isEmailError || !isPasswordError) {
+            
+            //TODO: fetch data
+            // setUsername
+            navigate('/UI');
+        } else {
+            //notify ca sunt probleme
+            toast({
+                title: 'Error',
+                description: "Va rugam introduceti credentialele corecte.",
+                status: 'error',
+                position: 'bottom-right',
+                duration: 9000,
+                isClosable: true,
+              })
+        }
     }
+
+    const validatePassword = () => {
+
+    }
+    const isEmailError = (inputEmail === '')
+    const isPasswordError = (inputPassword === '')
 
     const handleEmailChanged = (e: React.FormEvent<HTMLInputElement>) => {
         setInputEmail(e.currentTarget.value);
@@ -57,12 +77,14 @@ const Login = () => {
                         <Stack spacing="6">
                             <LoginForm
                                 inputEmail={inputEmail}
+                                isEmailError={isEmailError}
                                 handleEmailChanged={handleEmailChanged}
                                 inputPassword={inputPassword}
-                                handlepasswordChanged={handlePasswordChanged}
+                                isPasswordError={isPasswordError}
+                                handlePasswordChanged={handlePasswordChanged}
                             />
-                            <LoginFunctions 
-                            handleLogin={handleLogin}
+                            <LoginFunctions
+                                handleLogin={handleLogin}
                             />
                         </Stack>
                     </Box>
@@ -91,8 +113,9 @@ const LoginHeader = () => {
 }
 
 
-const LoginForm = ({ inputEmail, handleEmailChanged, inputPassword, handlePasswordChanged }: any) => {
-    const isEmailError = (inputEmail === '')
+const LoginForm = ({
+    inputEmail, isEmailError, handleEmailChanged,
+    inputPassword, isPasswordError, handlePasswordChanged }: any) => {
 
     return (<Stack spacing="5">
         <FormControl isInvalid={isEmailError}>
@@ -102,15 +125,22 @@ const LoginForm = ({ inputEmail, handleEmailChanged, inputPassword, handlePasswo
                 <FormHelperText>
                     Introdu email-ul tau.
                 </FormHelperText>
-            ) : (
+            ) : (   
                 <FormErrorMessage>Va rugam completati email-ul</FormErrorMessage>
             )}
         </FormControl>
-        <PasswordField value={inputPassword} onChange={handlePasswordChanged} />
+        <PasswordField
+            inputProps={
+                {
+                    value: inputPassword,
+                    onChange: handlePasswordChanged
+                }
+            }
+            isPasswordError={isPasswordError} />
     </Stack>)
 }
 
-const LoginFunctions = ({handleLogin} : any) => {
+const LoginFunctions = ({ handleLogin }: any) => {
     return (
         <>
             <HStack justify="space-between">
@@ -120,7 +150,7 @@ const LoginFunctions = ({handleLogin} : any) => {
                 </Button>
             </HStack>
             <Stack spacing="6">
-                <Button variant="solid" onClick={handleLogin}>Sign in</Button>
+                <Button variant="solid" onClick={handleLogin}>Log in</Button>
             </Stack>
         </>
     )

@@ -10,7 +10,8 @@ const Home = () => {
         // window.console.log("ChakraCalendar::d", d)
     }
     const context = useMyAccount();
-    const [isAuthenticated] = context.isAuthenticated;
+    const isAuthenticated = false;
+    // const [isAuthenticated] = context.isAuthenticated;
     return (
         <>
             {isAuthenticated ? 

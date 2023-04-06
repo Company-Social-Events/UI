@@ -6,8 +6,9 @@ import { useMyAccount } from '../context/MyAccountContext';
 
 export default function AccountMenu() {
   const context = useMyAccount();
-  const [username, setUserName] = context.username;
-  const [isAuthenticated,setIsAuthenticated] = context.isAuthenticated;
+  const username = ''
+  // const [username, setUserName] = context.username;
+  // const [isAuthenticated,setIsAuthenticated] = context.isAuthenticated;
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -15,8 +16,8 @@ export default function AccountMenu() {
   };
 
   const logout = () =>{
-    setUserName('');
-    setIsAuthenticated(false);
+    // setUserName('');
+    // setIsAuthenticated(false);
   }
   return (
     <Menu>

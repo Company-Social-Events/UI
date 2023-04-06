@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
-
+import { UserType } from "./UserType"
 type StateType<T> = [T, React.Dispatch<React.SetStateAction<T>>];
 type ContextType = {
-    username: StateType<string>;
-    isAuthenticated: StateType<boolean>;
+    user : UserType;
 };
+
+
 
 export const MyAccountContext = createContext<ContextType>({} as any);
 
@@ -17,15 +18,13 @@ interface Props {
 export const MyAccountProvider: React.FC<Props> = ({
     children,
 }) => {
-   
-    const username = useState<string>("");
-    const isAuthenticated = useState<boolean>(false);
+
+    const [user, setUser] = useState<UserType>({ username: '', email: '', isAuthenticated: false });
 
     return (
         <MyAccountContext.Provider
             value={{
-                username,
-                isAuthenticated
+              user:user
             }}
         >
             {children}
